@@ -28,6 +28,8 @@ class MarketMenuFragment:Fragment() {
 
         Log.v("@@@","Start")
         _binding = FragmentMarkertMenuBinding.inflate(inflater)
+
+        //binding.collapsingToolbar.title = "Test Title"
         return binding.root
     }
 }

@@ -34,74 +34,10 @@
     </HorizontalScrollView>
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp">
-
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:buttonGravity="bottom">
-
-                <HorizontalScrollView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <com.google.android.material.chip.ChipGroup
-                        android:id="@+id/chipGroup_styles"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:singleSelection="true">
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip_pizza"
-                            android:layout_marginStart="@dimen/settingsGeneralMargin"
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/chip_pizza" />
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip_combo"
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/chip_combo" />
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip_sweets"
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/chip_sweets" />
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip_drinks"
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/chip_drinks" />
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip_bakery"
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/chip_bakery" />
-
-                    </com.google.android.material.chip.ChipGroup>
-                </HorizontalScrollView>
-
-            </androidx.appcompat.widget.Toolbar>
-
-
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
+        android:fitsSystemWindows="true">
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/bottom_sheet_layout" />
