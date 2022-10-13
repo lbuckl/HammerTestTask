@@ -3,4 +3,14 @@
     <string name="menu">Menu</string>
     <string name="profile">Profile</string>
     <string name="basket">Basket</string>
+    <string name="scroll_advertising">Scroll advertising</string>
+    <string name="spinner_cities">Spinner_cities</string>
+    <string name="advertising_1">advertising_1</string>
+    <string name="advertising_2">advertising_2</string>
+    <string name="chip_pizza">Пицца</string>
+    <string name="chip_combo">Комбо</string>
+    <string name="chip_sweets">Десерты</string>
+    <string name="chip_drinks">Напитки</string>
+    <string name="chip_bakery">Выпечка</string>
+
 </resources>
