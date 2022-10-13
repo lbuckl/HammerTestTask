@@ -13,5 +13,6 @@
     <string name="chip_drinks">Напитки</string>
     <string name="chip_bakery">Выпечка</string>
     <string name="appbar">appbar</string>
+    <string name="ic_qr_scanner">qr_scanner</string>
 
 </resources>
