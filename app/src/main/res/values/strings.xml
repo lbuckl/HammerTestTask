@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">HammerTestTask</string>
+    <string name="menu">Menu</string>
+    <string name="profile">Profile</string>
+    <string name="basket">Basket</string>
+</resources>
