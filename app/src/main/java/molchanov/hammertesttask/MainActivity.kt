@@ -10,10 +10,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //if(savedInstanceState==null){
+        if(savedInstanceState==null){
             supportFragmentManager.beginTransaction()
-                .add(R.id.main_container,MarketMenuFragment.newInstance())
+                .add(R.id.main_container, MarketMenuFragment.newInstance())
                 .commit()
-        //}
+        }
     }
 }

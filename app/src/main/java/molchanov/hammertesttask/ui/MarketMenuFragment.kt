@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import molchanov.hammertesttask.databinding.FragmentMarkertMenuBinding
+import molchanov.hammertesttask.databinding.FragmentMarketMenuBinding
 
 class MarketMenuFragment:Fragment() {
 
@@ -15,8 +15,8 @@ class MarketMenuFragment:Fragment() {
         fun newInstance() = MarketMenuFragment()
     }
 
-    private var _binding: FragmentMarkertMenuBinding? = null
-    private val binding: FragmentMarkertMenuBinding
+    private var _binding: FragmentMarketMenuBinding? = null
+    private val binding: FragmentMarketMenuBinding
     get() {
         return _binding!!
     }
@@ -27,9 +27,8 @@ class MarketMenuFragment:Fragment() {
         savedInstanceState: Bundle?): View {
 
         Log.v("@@@","Start")
-        _binding = FragmentMarkertMenuBinding.inflate(inflater)
+        _binding = FragmentMarketMenuBinding.inflate(inflater)
 
-        //binding.collapsingToolbar.title = "Test Title"
         return binding.root
     }
 }
