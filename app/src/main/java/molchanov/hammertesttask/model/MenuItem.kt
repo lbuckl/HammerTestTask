@@ -18,7 +18,7 @@ data class MenuItem(
 fun getCities(): List<MenuItem> {
     return listOf(
         MenuItem("Пицца",
-            "Пицца с анчоусами",
+            "Пицца с анчоусами и ананасами и ещё что-то Пицца с анчоусами и ананасами и ещё что-то",
             "https://cdn-icons-png.flaticon.com/512/6121/6121817.png", 500.0),
         MenuItem("Пицца",
             "Пицца с бараниной",

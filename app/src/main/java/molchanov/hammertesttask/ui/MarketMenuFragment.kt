@@ -6,14 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.gb.weather.domain.getCities
 import com.gb.weather.view.weatherlist.WeatherListRecyclerAdapter
 import molchanov.hammertesttask.databinding.FragmentMarketMenuBinding
+import molchanov.hammertesttask.viewmodel.MenuListAppState
+import molchanov.hammertesttask.viewmodel.MenuListViewModel
 
 class MarketMenuFragment:Fragment() {
 
     companion object {
-        //lateinit var viewModel: WeatherListViewModel
+        lateinit var viewModel: MenuListViewModel
         fun newInstance() = MarketMenuFragment()
     }
 
@@ -27,8 +30,6 @@ class MarketMenuFragment:Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?): View {
-
-        Log.v("@@@","Start")
         _binding = FragmentMarketMenuBinding.inflate(inflater)
 
         return binding.root
@@ -36,7 +37,16 @@ class MarketMenuFragment:Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.v("@@@","getCities")
-        binding.recyclerview.adapter = WeatherListRecyclerAdapter(getCities())
+        viewModel = ViewModelProvider(this)[MenuListViewModel::class.java]
+        viewModel.getLiveData().observe(viewLifecycleOwner) { t -> renderData(t) }
+        //binding.recyclerview.adapter = WeatherListRecyclerAdapter(getCities())
+    }
+
+    private fun renderData(menuListAppState: MenuListAppState){
+        when (menuListAppState){
+            is MenuListAppState.Succes ->{
+
+            }
+        }
     }
 }

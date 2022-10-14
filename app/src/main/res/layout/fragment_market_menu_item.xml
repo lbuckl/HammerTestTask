@@ -7,14 +7,14 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="2dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="4dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -31,14 +31,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/imageView"/>
+                android:layout_toEndOf="@+id/imageView" />
 
             <TextView
                 android:id="@+id/text_temperature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/imageView"
-                android:layout_centerInParent="true"/>
+                android:layout_below="@+id/city_item"
+                android:layout_toEndOf="@+id/imageView" />
 
             <Button
                 android:id="@+id/button"
@@ -46,7 +46,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:contentDescription="@string/no_price" />
+                android:contentDescription="@string/no_price"
+                android:text="Заказать" />
 
         </RelativeLayout>
 

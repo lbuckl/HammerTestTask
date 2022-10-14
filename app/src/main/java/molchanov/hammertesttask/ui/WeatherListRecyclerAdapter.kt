@@ -36,7 +36,6 @@ class WeatherListRecyclerAdapter (private val weatherListCity:List<MenuItem>):
 
     //Возвращает количество элементов списка
     override fun getItemCount(): Int {
-        Log.v("@@@","Size")
         return weatherListCity.size
     }
 
