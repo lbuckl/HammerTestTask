@@ -39,13 +39,12 @@ class MarketMenuFragment:Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[MenuListViewModel::class.java]
         viewModel.getLiveData().observe(viewLifecycleOwner) { t -> renderData(t) }
-        //binding.recyclerview.adapter = WeatherListRecyclerAdapter(getCities())
     }
 
     private fun renderData(menuListAppState: MenuListAppState){
         when (menuListAppState){
             is MenuListAppState.Succes ->{
-
+                binding.recyclerview.adapter = WeatherListRecyclerAdapter(menuListAppState.menuListDTO)
             }
         }
     }

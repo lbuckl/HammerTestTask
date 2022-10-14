@@ -43,9 +43,9 @@ class WeatherListRecyclerAdapter (private val weatherListCity:List<MenuItem>):
     inner class WeatherViewHolder(view: View): RecyclerView.ViewHolder(view){
         fun bind(city: MenuItem){
             FragmentMarketMenuItemBinding.bind(itemView).apply {
-                imageView.setImageResource(R.drawable.image_pizza)
-                cityItem.text = city.name
-                textTemperature.text = city.description
+                imageViewMenuItemPicture.setImageResource(R.drawable.image_pizza)
+                textViewName.text = city.name
+                textViewDescription.text = city.description
             }
         }
     }
