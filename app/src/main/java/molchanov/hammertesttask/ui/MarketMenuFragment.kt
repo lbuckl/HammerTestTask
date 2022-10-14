@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.gb.weather.domain.Weather
 import com.gb.weather.domain.getCities
 import com.gb.weather.view.weatherlist.WeatherListRecyclerAdapter
 import molchanov.hammertesttask.databinding.FragmentMarketMenuBinding

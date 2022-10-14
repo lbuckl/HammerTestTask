@@ -14,5 +14,7 @@
     <string name="chip_bakery">Выпечка</string>
     <string name="appbar">appbar</string>
     <string name="ic_qr_scanner">qr_scanner</string>
+    <string name="no_price">нет в наличии</string>
+    <string name="image_menu_item">image_menu_item</string>
 
 </resources>

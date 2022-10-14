@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.gb.weather.domain.City
+import com.gb.weather.domain.MenuItem
+import molchanov.hammertesttask.R
 import molchanov.hammertesttask.databinding.FragmentMarketMenuItemBinding
 
 /**
  * Кастомный адаптер для вывода списка городов в recyclerview
  */
-class WeatherListRecyclerAdapter (private val weatherListCity:List<City>):
+class WeatherListRecyclerAdapter (private val weatherListCity:List<MenuItem>):
     RecyclerView.Adapter<WeatherListRecyclerAdapter.WeatherViewHolder>() {
 
     init {
@@ -41,9 +42,12 @@ class WeatherListRecyclerAdapter (private val weatherListCity:List<City>):
 
     //Вложенный класс для отображения данных в fragment_weather_list_item.xml
     inner class WeatherViewHolder(view: View): RecyclerView.ViewHolder(view){
-        fun bind(city: City){
-            val binding = FragmentMarketMenuItemBinding.bind(itemView)
-            binding.cityItem.text = city.name
+        fun bind(city: MenuItem){
+            FragmentMarketMenuItemBinding.bind(itemView).apply {
+                imageView.setImageResource(R.drawable.image_pizza)
+                cityItem.text = city.name
+                textTemperature.text = city.description
+            }
         }
     }
 }
