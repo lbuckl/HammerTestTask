@@ -15,6 +15,7 @@ data class MenuItem(
     }
 }
 
+//TODO Тестовый лсит для проверки вывода информации в reciclerView
 fun getCities(): List<MenuItem> {
     return listOf(
         MenuItem("Пицца",

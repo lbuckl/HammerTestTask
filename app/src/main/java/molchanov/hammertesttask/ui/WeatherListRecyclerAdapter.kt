@@ -1,10 +1,12 @@
 package com.gb.weather.view.weatherlist
 
+import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.gb.weather.domain.MenuItem
 import molchanov.hammertesttask.R
 import molchanov.hammertesttask.databinding.FragmentMarketMenuItemBinding
@@ -15,10 +17,6 @@ import molchanov.hammertesttask.databinding.FragmentMarketMenuItemBinding
 class WeatherListRecyclerAdapter (private val weatherListCity:List<MenuItem>):
     RecyclerView.Adapter<WeatherListRecyclerAdapter.WeatherViewHolder>() {
 
-    init {
-        Log.v("@@@",weatherListCity.size.toString())
-    }
-
     //Создаёт ViewHolder объект опираясь на их количество, но с запасом, чтобы можно было скролить
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeatherViewHolder {
         val binding = FragmentMarketMenuItemBinding.inflate(LayoutInflater.from(parent.context))
@@ -28,10 +26,6 @@ class WeatherListRecyclerAdapter (private val weatherListCity:List<MenuItem>):
     //Связываем используемые текстовые метки с данными
     override fun onBindViewHolder(holder: WeatherViewHolder, position: Int) {
         holder.bind(weatherListCity[position])
-
-        holder.itemView.setOnClickListener{
-            //TODO
-        }
     }
 
     //Возвращает количество элементов списка
@@ -41,11 +35,14 @@ class WeatherListRecyclerAdapter (private val weatherListCity:List<MenuItem>):
 
     //Вложенный класс для отображения данных в fragment_weather_list_item.xml
     inner class WeatherViewHolder(view: View): RecyclerView.ViewHolder(view){
-        fun bind(city: MenuItem){
+        @SuppressLint("SetTextI18n")
+        fun bind(menuItem: MenuItem){
             FragmentMarketMenuItemBinding.bind(itemView).apply {
-                imageViewMenuItemPicture.setImageResource(R.drawable.image_pizza)
-                textViewName.text = city.name
-                textViewDescription.text = city.description
+                //imageViewMenuItemPicture.setImageResource(R.drawable.image_pizza)
+                imageViewMenuItemPicture.load(menuItem.link)
+                textViewName.text = menuItem.name
+                textViewDescription.text = menuItem.description
+                button.text = "${menuItem.price} р."
             }
         }
     }

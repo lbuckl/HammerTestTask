@@ -39,7 +39,11 @@ class MenuListViewModel(private val liveData: MutableLiveData<MenuListAppState> 
     private fun menuDTOtoListMenuItem(collection: MenuDTO):List<MenuItem>{
         val listMenu:MutableList<MenuItem> = mutableListOf()
         for (item in collection.collection.items){
-            listMenu.add(MenuItem(item.data[0].center, item.data[0].title,item.href,500.0))
+            listMenu.add(MenuItem(
+                item.data[0].center,
+                item.data[0].title,
+                item.links[0].href,
+                500.0))
         }
         return listMenu
     }
