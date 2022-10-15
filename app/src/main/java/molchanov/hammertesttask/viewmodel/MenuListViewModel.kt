@@ -42,7 +42,7 @@ class MenuListViewModel(private val liveData: MutableLiveData<MenuListAppState> 
                 item.data[0].center,
                 item.data[0].title,
                 item.links[0].href,
-                500.0))
+                -500.0))
         }
         return listMenu
     }

@@ -1,8 +1,6 @@
 package molchanov.hammertesttask
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -22,6 +20,7 @@ class MainActivity : AppCompatActivity() {
                 .commit()
         }
 
+        //Работа BottomNavigationView
         findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
             .setOnItemSelectedListener { item ->
                 when (item.itemId) {

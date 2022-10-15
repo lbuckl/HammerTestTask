@@ -10,7 +10,7 @@ import java.io.IOException
 
 /**
  * класс для запроса фото дня из API NASA
- *
+ * основная функция для запроса: getRetrofitImpl()
  */
 class MenuRequestImpl {
     private val baseUrl = "https://images-api.nasa.gov"
@@ -31,6 +31,7 @@ class MenuRequestImpl {
         return httpClient.build()
     }
 
+    //Перехватчик для отлавливания колбэков о результате загрузки
     class PODInterceptor : Interceptor {
         @Throws(IOException::class)
         override fun intercept(chain: Interceptor.Chain): okhttp3.Response {

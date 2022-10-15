@@ -1,8 +1,16 @@
 package com.gb.weather.domain
 
 import android.os.Parcelable
+import android.util.Log
 import kotlinx.parcelize.Parcelize
 
+/**
+ * Класс хранящий данные элементов меню
+ * @param name - намиенование блюда
+ * @param description - описание блюда
+ * @param link - ссылка на фото блюда
+ * @param price - цена блюда
+ */
 @Parcelize
 data class MenuItem(
     val name: String,
@@ -10,28 +18,9 @@ data class MenuItem(
     val link: String,
     var price: Double
 ): Parcelable{
+    //Защита от неверного ввода цены
     init {
-        if (price < 0) price = 10000.0
+        Log.w("ErrorPeice","Не корректный воод цены, присвоена максимальная цена")
+        if (price < 1) price = 10000.0
     }
-}
-
-//TODO Тестовый лсит для проверки вывода информации в reciclerView
-fun getCities(): List<MenuItem> {
-    return listOf(
-        MenuItem("Пицца",
-            "Пицца с анчоусами и ананасами и ещё что-то Пицца с анчоусами и ананасами и ещё что-то",
-            "https://cdn-icons-png.flaticon.com/512/6121/6121817.png", 500.0),
-        MenuItem("Пицца",
-            "Пицца с бараниной",
-            "https://cdn-icons-png.flaticon.com/512/6121/6121817.png", 510.0),
-        MenuItem("Пицца",
-            "Пицца с вегитарианская",
-            "https://cdn-icons-png.flaticon.com/512/6121/6121817.png", 520.0),
-        MenuItem("Пицца",
-            "Пицца с грибами",
-            "https://cdn-icons-png.flaticon.com/512/6121/6121817.png", 530.0),
-        MenuItem("Пицца",
-            "Пицца с курицей",
-            "https://cdn-icons-png.flaticon.com/512/6121/6121817.png", 540.0),
-    )
 }
