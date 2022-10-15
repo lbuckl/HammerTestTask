@@ -27,23 +27,17 @@ class MainActivity : AppCompatActivity() {
                 when (item.itemId) {
                     R.id.bottom_view_menu -> {
                         val menuLastFragment = supportFragmentManager.findFragmentByTag("menuFragment")
-                        supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_container, MarketMenuFragment.newInstance(),"menuFragment")
-                            .commit()
+                        replaceFragment(menuLastFragment,MarketMenuFragment(),"menuFragment")
                         true
                     }
                     R.id.bottom_view_profile -> {
                         val profileLastFragment = supportFragmentManager.findFragmentByTag("profileFragment")
-                        supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_container, ProfileFragment.newInstance(),"profileFragment")
-                            .commit()
+                        replaceFragment(profileLastFragment,ProfileFragment(),"profileFragment")
                         true
                     }
                     R.id.bottom_view_basket -> {
                         val basketLastFragment = supportFragmentManager.findFragmentByTag("basketFragment")
-                        supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_container, BasketFragment.newInstance(),"basketFragment")
-                            .commit()
+                        replaceFragment(basketLastFragment,BasketFragment(),"basketFragment")
                         true
                     }
                     else -> false
