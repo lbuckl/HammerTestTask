@@ -17,32 +17,38 @@ class MenuListViewModel(private val liveData: MutableLiveData<MenuListAppState> 
         liveData
     }
 
-    private fun getMenuItems(){
+    private fun getMenuItems() {
+        liveData.postValue(MenuListAppState.Loading)
+
         MenuRequestImpl().getRetrofitImpl().getMenu(
             "earth",
             "earth",
             "russia",
             "image"
-        ).enqueue(object : retrofit2.Callback<MenuDTO>{
+        ).enqueue(object : retrofit2.Callback<MenuDTO> {
             override fun onResponse(call: Call<MenuDTO>, response: Response<MenuDTO>) {
                 Log.v("@@@", "VM:setSucces")
 
                 liveData.postValue(MenuListAppState.Succes(menuDTOtoListMenuItem(response.body()!!)))
             }
+
             override fun onFailure(call: Call<MenuDTO>, t: Throwable) {
                 liveData.postValue(MenuListAppState.Error(Exception("Loading Failure")))
             }
         })
     }
 
-    private fun menuDTOtoListMenuItem(collection: MenuDTO):List<MenuItem>{
-        val listMenu:MutableList<MenuItem> = mutableListOf()
-        for (item in collection.collection.items){
-            listMenu.add(MenuItem(
-                item.data[0].center,
-                item.data[0].title,
-                item.links[0].href,
-                -500.0))
+    private fun menuDTOtoListMenuItem(collection: MenuDTO): List<MenuItem> {
+        val listMenu: MutableList<MenuItem> = mutableListOf()
+        for (item in collection.collection.items) {
+            listMenu.add(
+                MenuItem(
+                    item.data[0].center,
+                    item.data[0].title,
+                    item.links[0].href,
+                    500.0
+                )
+            )
         }
         return listMenu
     }

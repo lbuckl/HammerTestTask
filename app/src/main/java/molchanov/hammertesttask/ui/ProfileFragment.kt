@@ -5,16 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import molchanov.hammertesttask.databinding.FragmentBasketBinding
-import molchanov.hammertesttask.databinding.FragmentMarketMenuBinding
 import molchanov.hammertesttask.databinding.FragmentProfileBinding
-import molchanov.hammertesttask.viewmodel.MenuListViewModel
 
+/**
+ * Фрагмент для отображения профиля
+ * используется как заглушка
+ */
 class ProfileFragment:Fragment() {
-    companion object {
-        fun newInstance() = ProfileFragment()
-    }
-
     private var _binding: FragmentProfileBinding? = null
     private val binding: FragmentProfileBinding
         get() {

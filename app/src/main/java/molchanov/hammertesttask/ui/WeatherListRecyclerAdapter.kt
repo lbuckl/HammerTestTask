@@ -1,18 +1,16 @@
 package com.gb.weather.view.weatherlist
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.gb.weather.domain.MenuItem
-import molchanov.hammertesttask.R
 import molchanov.hammertesttask.databinding.FragmentMarketMenuItemBinding
 
 /**
- * Кастомный адаптер для вывода списка городов в recyclerview
+ * Кастомный адаптер для вывода списка элементов меню в recyclerview
  */
 class WeatherListRecyclerAdapter (private val weatherListCity:List<MenuItem>):
     RecyclerView.Adapter<WeatherListRecyclerAdapter.WeatherViewHolder>() {
@@ -33,13 +31,19 @@ class WeatherListRecyclerAdapter (private val weatherListCity:List<MenuItem>):
         return weatherListCity.size
     }
 
-    //Вложенный класс для отображения данных в fragment_weather_list_item.xml
+    //Класс который непосредственно отображает данные в каждом элементе recyclerview
     inner class WeatherViewHolder(view: View): RecyclerView.ViewHolder(view){
         @SuppressLint("SetTextI18n")
         fun bind(menuItem: MenuItem){
             FragmentMarketMenuItemBinding.bind(itemView).apply {
-                //imageViewMenuItemPicture.setImageResource(R.drawable.image_pizza)
-                imageViewMenuItemPicture.load(menuItem.link)
+                /**
+                 * ВНИМАНИЕ!!! КОСТЫЛЬ!!!
+                 * Используемое API присылает картинки разных пропорций и размеров,
+                 * поэтому изображение заменено на рандомное из интернета
+                 * можно раскомментировать строку ниже и проверить работоспособность
+                 */
+                //imageViewMenuItemPicture.load(menuItem.link)
+                imageViewMenuItemPicture.load("https://zakagioboi.ru/img/fotooboi/450559135.jpg")
                 textViewName.text = menuItem.name
                 textViewDescription.text = menuItem.description
                 button.text = "${menuItem.price} р."

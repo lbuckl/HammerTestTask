@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.gb.weather.shared.showSnackBarErrorMsg
 import com.gb.weather.view.weatherlist.WeatherListRecyclerAdapter
 import molchanov.hammertesttask.databinding.FragmentMarketMenuBinding
 import molchanov.hammertesttask.viewmodel.MenuListAppState
@@ -42,7 +44,15 @@ class MarketMenuFragment:Fragment() {
     private fun renderData(menuListAppState: MenuListAppState){
         when (menuListAppState){
             is MenuListAppState.Succes ->{
+                binding.progressBar.isVisible = false
                 binding.recyclerview.adapter = WeatherListRecyclerAdapter(menuListAppState.menuListDTO)
+            }
+            is MenuListAppState.Error -> {
+                binding.progressBar.isVisible = false
+                view?.showSnackBarErrorMsg("Данные не загружены")
+            }
+            is MenuListAppState.Loading -> {
+                binding.progressBar.isVisible = true
             }
         }
     }

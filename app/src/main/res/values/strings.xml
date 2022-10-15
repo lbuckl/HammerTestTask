@@ -17,4 +17,7 @@
     <string name="no_price">нет в наличии</string>
     <string name="image_menu_item">image_menu_item</string>
 
+    <string name="error">Ошибка</string>
+    <string name="info">Внимание!!!</string>
+
 </resources>

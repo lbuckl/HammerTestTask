@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import molchanov.hammertesttask.databinding.FragmentBasketBinding
 
+/**
+ * Фрагмент для отображения корзины
+ * используется как заглушка
+ */
 class BasketFragment:Fragment() {
-    companion object {
-        fun newInstance() = BasketFragment()
-    }
-
     private var _bindingBasket: FragmentBasketBinding? = null
     private val bindingBasket: FragmentBasketBinding
         get() {
