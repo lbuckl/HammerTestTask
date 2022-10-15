@@ -35,14 +35,14 @@
                             android:id="@+id/imageView_advertising1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:contentDescription="@string/advertising_1"
+                            android:contentDescription="@string/advertising"
                             app:srcCompat="@drawable/advertising_1" />
 
                         <ImageView
                             android:id="@+id/imageView_advertising2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:contentDescription="@string/advertising_2"
+                            android:contentDescription="@string/advertising"
                             app:srcCompat="@drawable/advertising_1" />
 
                     </LinearLayout>

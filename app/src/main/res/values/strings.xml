@@ -1,23 +1,29 @@
 <resources>
     <string name="app_name">HammerTestTask</string>
+
+    <!-- Строки для отображения элементов BottomNavigationView. -->
     <string name="menu">Menu</string>
     <string name="profile">Profile</string>
     <string name="basket">Basket</string>
-    <string name="scroll_advertising">Scroll advertising</string>
-    <string name="spinner_cities">Spinner_cities</string>
-    <string name="advertising_1">advertising_1</string>
-    <string name="advertising_2">advertising_2</string>
+
+    <!-- Строки для отображения элементов fragment_market_menu. -->
     <string name="chip_pizza">Пицца</string>
     <string name="chip_combo">Комбо</string>
     <string name="chip_sweets">Десерты</string>
     <string name="chip_drinks">Напитки</string>
     <string name="chip_bakery">Выпечка</string>
-    <string name="appbar">appbar</string>
-    <string name="ic_qr_scanner">qr_scanner</string>
     <string name="no_price">нет в наличии</string>
-    <string name="image_menu_item">image_menu_item</string>
 
+    <!-- Строки для отображения Toast и SnackBar. -->
     <string name="error">Ошибка</string>
     <string name="info">Внимание!!!</string>
+
+    <!-- Строки для contentDescription. -->
+    <string name="spinner_cities">Spinner_cities</string>
+    <string name="ic_qr_scanner">qr_scanner</string>
+    <string name="appbar">appbar</string>
+    <string name="scroll_advertising">Scroll advertising</string>
+    <string name="advertising">advertising</string>
+    <string name="image_menu_item">image_menu_item</string>
 
 </resources>

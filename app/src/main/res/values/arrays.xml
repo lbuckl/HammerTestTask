@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Массив для селектора выбора городов. -->
     <string-array name="cities">
         <item>Москва</item>
         <item>Екатеринбург</item>
