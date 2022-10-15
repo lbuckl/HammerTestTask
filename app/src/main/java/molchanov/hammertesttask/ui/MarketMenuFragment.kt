@@ -1,13 +1,11 @@
 package molchanov.hammertesttask.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.gb.weather.domain.getCities
 import com.gb.weather.view.weatherlist.WeatherListRecyclerAdapter
 import molchanov.hammertesttask.databinding.FragmentMarketMenuBinding
 import molchanov.hammertesttask.viewmodel.MenuListAppState
@@ -47,5 +45,10 @@ class MarketMenuFragment:Fragment() {
                 binding.recyclerview.adapter = WeatherListRecyclerAdapter(menuListAppState.menuListDTO)
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

@@ -31,7 +31,6 @@ class MenuListViewModel(private val liveData: MutableLiveData<MenuListAppState> 
             }
             override fun onFailure(call: Call<MenuDTO>, t: Throwable) {
                 liveData.postValue(MenuListAppState.Error(Exception("Loading Failure")))
-                Log.v("@@@", "Loading Failure")
             }
         })
     }
