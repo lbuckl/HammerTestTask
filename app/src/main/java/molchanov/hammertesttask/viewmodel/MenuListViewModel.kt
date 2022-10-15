@@ -1,9 +1,9 @@
 package molchanov.hammertesttask.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.gb.weather.domain.MenuItem
+import com.gb.weather.model.RepositoryRequestHistory
 import molchanov.hammertesttask.model.dto.MenuDTO
 import molchanov.hammertesttask.model.request.MenuRequestImpl
 import retrofit2.Call
@@ -12,12 +12,14 @@ import retrofit2.Response
 class MenuListViewModel(private val liveData: MutableLiveData<MenuListAppState> = MutableLiveData<MenuListAppState>()) :
     ViewModel() {
 
+    val repositoryRoomRequest = RepositoryRequestHistory
+
     val getLiveData = {
         getMenuItems()
         liveData
     }
 
-    private fun getMenuItems() {
+    fun getMenuItems() {
         liveData.postValue(MenuListAppState.Loading)
 
         MenuRequestImpl().getRetrofitImpl().getMenu(
@@ -27,13 +29,14 @@ class MenuListViewModel(private val liveData: MutableLiveData<MenuListAppState> 
             "image"
         ).enqueue(object : retrofit2.Callback<MenuDTO> {
             override fun onResponse(call: Call<MenuDTO>, response: Response<MenuDTO>) {
-                Log.v("@@@", "VM:setSucces")
-
-                liveData.postValue(MenuListAppState.Succes(menuDTOtoListMenuItem(response.body()!!)))
+                val listResponce = MenuListAppState.Succes(menuDTOtoListMenuItem(response.body()!!))
+                liveData.postValue(listResponce)
+                repositoryRoomRequest.addMenuItemsToHistory(listResponce.menuListDTO)
             }
 
             override fun onFailure(call: Call<MenuDTO>, t: Throwable) {
-                liveData.postValue(MenuListAppState.Error(Exception("Loading Failure")))
+                //liveData.postValue(MenuListAppState.Error(Exception("Loading Failure")))
+                liveData.postValue(MenuListAppState.Succes(repositoryRoomRequest.getHistoryList()))
             }
         })
     }
