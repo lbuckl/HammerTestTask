@@ -65,11 +65,12 @@
                     android:id="@+id/chipGroup_styles"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:singleSelection="true">
+                    app:singleSelection="true"
+                    style="@style/MenuChipGroupStyle">
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_pizza"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        style="@style/MenuChipStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/settingsGeneralMargin"
@@ -77,28 +78,28 @@
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_combo"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        style="@style/MenuChipStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/chip_combo" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_sweets"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        style="@style/MenuChipStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/chip_sweets" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_drinks"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        style="@style/MenuChipStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/chip_drinks" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_bakery"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        style="@style/MenuChipStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/chip_bakery" />

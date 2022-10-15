@@ -13,6 +13,7 @@
     <string name="chip_drinks">Напитки</string>
     <string name="chip_bakery">Выпечка</string>
     <string name="no_price">нет в наличии</string>
+    <string name="buy">Купить</string>
 
     <!-- Строки для отображения Toast и SnackBar. -->
     <string name="error">Ошибка</string>
@@ -25,5 +26,6 @@
     <string name="scroll_advertising">Scroll advertising</string>
     <string name="advertising">advertising</string>
     <string name="image_menu_item">image_menu_item</string>
+
 
 </resources>

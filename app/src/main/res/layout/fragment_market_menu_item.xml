@@ -13,8 +13,10 @@
         app:cardElevation="4dp">
 
         <RelativeLayout
+            android:id="@+id/Relative_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/CardViewRightMargin">
 
             <ImageView
                 android:id="@+id/imageView_menuItemPicture"
@@ -28,6 +30,7 @@
 
             <TextView
                 android:id="@+id/textView_name"
+                style="@style/MenuItemNameStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -35,6 +38,7 @@
 
             <TextView
                 android:id="@+id/textView_description"
+                style="@style/MenuItemDescriptionStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView_name"
@@ -42,12 +46,13 @@
 
             <Button
                 android:id="@+id/button"
+                style="@style/ButtonBuyStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:contentDescription="@string/no_price"
-                android:text="Заказать" />
+                android:text="@string/buy" />
 
         </RelativeLayout>
 

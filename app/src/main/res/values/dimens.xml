@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Параметры отображения чипов в . -->
     <dimen name="settingsGeneralMargin">8dp</dimen>
+
+    <!-- Размер отступа сверху для работы CollapsingToolbarLayout. -->
     <dimen name="menuAppMargin">64dp</dimen>
+
+    <!-- Размер иконки QR scanner. -->
     <dimen name="qr_scanner_size">32dp</dimen>
+    <dimen name="CardViewRightMargin">8dp</dimen>
 </resources>
