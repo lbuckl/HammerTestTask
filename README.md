@@ -22,5 +22,17 @@
 #### - SQLite, room (работа с БД хранения последних загруженных данных)
 ---
 Демонстрация работы приложения
-https://user-images.githubusercontent.com/11242192/196041430-22f9955d-aaea-4596-b441-59382cc2dccb.mp4
 
+https://user-images.githubusercontent.com/11242192/196041759-2ffe51fc-3b13-4dcc-b954-588813b787cf.mp4
+
+Начальная страница
+
+![1](https://user-images.githubusercontent.com/11242192/196041778-a9f8c512-a52b-4246-9f7a-cd6fee4448a1.jpg)
+
+Работа сollapsingToolbarLayout
+
+![2](https://user-images.githubusercontent.com/11242192/196041795-9cee885a-419f-4f94-bd54-ea0ead21972d.jpg)
+
+Действие при потере связи
+
+![3](https://user-images.githubusercontent.com/11242192/196041837-f39b33ee-5839-4cd9-b94b-8fac770d3c43.jpg)
